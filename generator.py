@@ -8,13 +8,15 @@ def check_selection (user_selection):
         pass
     return user_selection
 
-def check_artist (artist_choice):
-    artists = ['Bieber', 'Drake' , 'Beyonce', 'Eminem']
-    while artist_choice.casefold() not in artists:
-        print('sorry there is a typing mistake , please check your spelling !')
-        artist_choice = input('please type your artist : \n')
-    
-    return artist_choice
+# # check validation of artist input
+# def check_artist (artist_choice):
+#     artists = ['Bieber', 'Drake' , 'Beyonce', 'Eminem']
+#     while artist_choice not in artists:
+#         print('sorry there is a typing mistake , please check your spelling !')
+#         artist_choice = input('please type your artist : \n').casefold()
+#     else:
+#         pass
+#     return artist_choice
 
 # check validation of song numbers
 def check_number(song_choice):
@@ -26,79 +28,112 @@ def check_number(song_choice):
 #put songs in a list
 songs = ['Baby by Bieber', 'Hotline Bling by Drake' , 'Flawless by Beyonce', 'Fall by Eminem', 'Started From the Bottom by Drake']
 
-# ask the user to choose by song or artist
-user_selection = check_selection(input ('please type A to select songs by Artists or S to choose by song! \n ')).casefold()
+play = input ('pleast type * to play  or anything to exit : \n')
+while play == '*':
+    # ask the user to choose by song or artist
+    user_selection = check_selection(input ('please type A to select songs by Artists or S to choose by song! \n ')).casefold()
 
-# 1 - if he choose by song:
-if user_selection == 's':
+    # 1 - if he choose by song:
+    if user_selection == 's':
     
-    # print the songs list 
-    print(f'Welcome, please select a song from this top 5 songs: ')
-    for (index,song) in enumerate (songs, start= 1):
-        print(index, song)
+        # print the songs list 
+        print(f'Welcome, please select a song from this top 5 songs: ')
+        for (index,song) in enumerate (songs, start= 1):
+            print(index, song)
     
-    # tell the user to put the index of the song 
-    song_choice = check_number(input( 'please type the number of the song you want to play from the previous list :\n'))
+        # tell the user to put the index of the song 
+        song_choice = check_number(input( 'please type the number of the song you want to play from the previous list :\n'))
 
-    # print the song name according to user choice
-    for (index,song) in enumerate (songs, start= 1):
+        # print the song name according to user choice
+        for (index,song) in enumerate (songs, start= 1):
 
-        if song_choice == 1:
-            print(f'You chose {songs[0]}. Here you go: ')
+            if song_choice == 1:
+                print(f'You chose {songs[0]}. Here you go: ')
 
-             # print the lyrics of the song he choose
-            print (f'----- {songs[0]} -----')
-            print(f' Ooh, ooh \n Across the ocean, across the sea \n Startin to forget the way you look at me now\n Over the mountains, across the sky\n Need to see your face \n I need to look in your eyes \n Through the storm and through the clouds\n Bumps in the road and upside down now \n I know it\'s hard babe, to sleep at night\n Don\'t you worry\n Cause everything\'s gonna be alright, ai-ai-ai-a\'ight\n Be alright, ai-ai-ai-a\'ight.')
-            break
-        elif song_choice  == 2:
-            print(f'You chose {songs[1]}. Here you go: ')
+                # print the lyrics of the song he choose
+                print (f'----- {songs[0]} -----')
+                print(f' Ooh, ooh \n Across the ocean, across the sea \n Startin to forget the way you look at me now\n Over the mountains, across the sky\n Need to see your face \n I need to look in your eyes \n Through the storm and through the clouds\n Bumps in the road and upside down now \n I know it\'s hard babe, to sleep at night\n Don\'t you worry\n Cause everything\'s gonna be alright, ai-ai-ai-a\'ight\n Be alright, ai-ai-ai-a\'ight.')
+                break
+            elif song_choice  == 2:
+                print(f'You chose {songs[1]}. Here you go: ')
 
-            # print the lyrics of the song he choose
-            print (f'----- {songs[1]} -----')
-            print (f'You used to call me on my cell phone \n Late night when you need my love \n Call me on my cell phone \n Late night when you need my love \n And I know when that hotline bling \n That can only mean one thing \n I know when that hotline bling \n That can only mean one thing')
-            break
+                # print the lyrics of the song he choose
+                print (f'----- {songs[1]} -----')
+                print (f'You used to call me on my cell phone \n Late night when you need my love \n Call me on my cell phone \n Late night when you need my love \n And I know when that hotline bling \n That can only mean one thing \n I know when that hotline bling \n That can only mean one thing')
+                break
 
-        elif song_choice  == 3:
-            print(f'You chose {songs[2]}. Here you go: ')
+            elif song_choice  == 3:
+                print(f'You chose {songs[2]}. Here you go: ')
 
-            # print the lyrics of the song he choose
-            print (f'----- {songs[2]} -----')
-            print (f'I\'m out that H, town coming coming down\n I\'m coming down, drippin\' candy on the ground\n H, Town, Town, I\'m coming down, coming down\n Drippin\' candy on the ground...')
-            break
-        elif song_choice == 4:
-            print(f'You chose {songs[3]}. Here you go: ')
+                # print the lyrics of the song he choose
+                print (f'----- {songs[2]} -----')
+                print (f'I\'m out that H, town coming coming down\n I\'m coming down, drippin\' candy on the ground\n H, Town, Town, I\'m coming down, coming down\n Drippin\' candy on the ground...')
+                break
+            elif song_choice == 4:
+                print(f'You chose {songs[3]}. Here you go: ')
 
-            # print the lyrics of the song he choose
-            print (f'----- {songs[3]} -----')
-            print (f' Don\'t fall on my face \n Don\'t fall on my faith, oh \n Don\'t fall on my fate \n Don\'t fall on my faith, oh \n Don\'t fall on my fate')
-            break
-        else:
-            print(f'You chose {songs[4]}. Here you go: ')
+                # print the lyrics of the song he choose
+                print (f'----- {songs[3]} -----')
+                print (f' Don\'t fall on my face \n Don\'t fall on my faith, oh \n Don\'t fall on my fate \n Don\'t fall on my faith, oh \n Don\'t fall on my fate')
+                break
+            else:
+                print(f'You chose {songs[4]}. Here you go: ')
 
-            # print the lyrics of the song he choose
-            print (f'----- {songs[4]} -----')
-            print (f'I done kept it real from the jump \n Living at my mama house we\'d argue every month \n Nigga, I was tryna get it on my own \n Workin\' all night, traffic on the way home \n And my uncle calling me like, "Where ya at? \n I gave you the keys told you bring it right back" \n Nigga, I just think it\'s funny how it goes \n Now I\'m on the road, half a million for a show')
-            break
+                # print the lyrics of the song he choose
+                print (f'----- {songs[4]} -----')
+                print (f'I done kept it real from the jump \n Living at my mama house we\'d argue every month \n Nigga, I was tryna get it on my own \n Workin\' all night, traffic on the way home \n And my uncle calling me like, "Where ya at? \n I gave you the keys told you bring it right back" \n Nigga, I just think it\'s funny how it goes \n Now I\'m on the road, half a million for a show')
+                break
 
         
-# 2- if he choose artist:
-elif user_selection == 'a':
-    # ask the user to type name of artists available 
-    print('please choose the artist you want to listen to from this list :') 
-    artists = ['Bieber', 'Drake' , 'Beyonce', 'Eminem']
-    for (artist) in (artists):
-        print(f'* {artist}')
-    artist_choice = check_artist(input('please type your artist : \n')).casefold()
+    # 2- if he choose artist:
+    elif user_selection == 'a':
+        # ask the user to type name of artists available 
+        print('please choose the artist you want to listen to from this list :') 
+        artists = ['Bieber', 'Drake']
+        for (artist) in (artists):
+            print(f'* {artist}')
+        artist_choice = input ('please type your artist : \n').casefold()
 
-    # tell him the songs of the artist to choose from 
-    if artist_choice == 'Bieber'.casefold():
-        print('Baby song')
-        run = input (' do you want to play : enter * to choose again !')
-# print user choice 
+        # tell him the songs of the artist to choose from 
+        if artist_choice == 'Bieber'.casefold():
+            print('<< Baby song >> is available')  
 
-# print song lyrics
+            # print song lyrics 
+            print(f' Ooh, ooh \n Across the ocean, across the sea \n Startin to forget the way you look at me now\n Over the mountains, across the sky\n Need to see your face \n I need to look in your eyes \n Through the storm and through the clouds\n Bumps in the road and upside down now \n I know it\'s hard babe, to sleep at night\n Don\'t you worry\n Cause everything\'s gonna be alright, ai-ai-ai-a\'ight\n Be alright, ai-ai-ai-a\'ight.')
 
+        # if choice is Drake
+        elif artist_choice == 'Drake'.casefold():
+            print (f'Songs By Drake are : \n 1- Hotline Bling \n 2- Started From the Bottom')
+            song = int(input ('enter number of song you want to play : \n'))
+            # if chose first song 
+            if song == 1:
+                print(f'You chose Hotline Bling . Here you go: ')
+                # print the lyrics of the song he choose
+                print (f'----- Hotline Bling -----')
+                print (f'You used to call me on my cell phone \n Late night when you need my love \n Call me on my cell phone \n Late night when you need my love \n And I know when that hotline bling \n That can only mean one thing \n I know when that hotline bling \n That can only mean one thing')
+                
+            #if chose second song
+            elif song == 2:
+                print(f'You chose Started From The bottom . Here you go: ')
 
-# ask the user to type * to choose again
+                # print the lyrics of the song he choose
+                print (f'----- Started From The bottom -----')
+                print (f'I done kept it real from the jump \n Living at my mama house we\'d argue every month \n Nigga, I was tryna get it on my own \n Workin\' all night, traffic on the way home \n And my uncle calling me like, "Where ya at? \n I gave you the keys told you bring it right back" \n Nigga, I just think it\'s funny how it goes \n Now I\'m on the road, half a million for a show')
+            
+            #if chose number not available
+            else : 
+                print ('sorry, i don\'t uderstand, try again later !')
+        # if chose another artist :
+        else:
+            print('sorry, not available!')
+    
+    # new line           
+    print ('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>')
+    
+    # ask user to play again
+    play = input ('pleast type * to play again or anything to exit : \n')
 
-
+# if user chose to exit:
+else:
+    print('Have a nice time !')
+    
